@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         GitHubService gitHubService = GitHubService.retrofit.create(GitHubService.class);
         final Call<User> call =
-                gitHubService.getUser("alexanderklimov");
+                gitHubService.getUser("Mezeo-22");
 
         call.enqueue(new Callback<User>() {
             @Override
@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     User user = response.body();
 
                     // Получаем json из github-сервера и конвертируем его в удобный вид
-                    mTextView.setText("Аккаунт Github: Mezeo-22" +
+                    mTextView.setText("Аккаунт Github: " + user.getName() +
                             "\nСайт: " + user.getBlog() +
-                            "\nКомпания: ЯКСЭ");
+                            "\nКомпания: " + user.getCompany());
 
                     mProgressBar.setVisibility(View.INVISIBLE);
                 } else {
