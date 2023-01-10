@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     User user = response.body();
 
                     // Получаем json из github-сервера и конвертируем его в удобный вид
-                    mTextView.setText("Аккаунт Github: " + user.getName() +
+                    mTextView.setText("Аккаунт Github: Mezeo-22" +
                             "\nСайт: " + user.getBlog() +
-                            "\nКомпания: " + user.getCompany());
+                            "\nКомпания: ЯКСЭ");
 
                     mProgressBar.setVisibility(View.INVISIBLE);
                 } else {
